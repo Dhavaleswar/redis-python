@@ -8,8 +8,8 @@ def main():
     # Uncomment the code below to pass the first stage
     #
     with socket.create_server(("localhost", 6379), reuse_port=True) as server_socket:
-        connection_, _ = server_socket.accept() # wait for client
         while True:
+            connection_, _ = server_socket.accept()  # wait for client
             data = connection_.recv(1024)
             if not data:
                 break
