@@ -12,8 +12,9 @@ def main():
             connection_, _ = server_socket.accept()  # wait for client
             data = connection_.recv(1024)
             if not data:
-                break
-            connection_.sendall(b"+PONG\r\n")
+                connection_.close()
+            else:
+                connection_.sendall(b"+PONG\r\n")
 
 if __name__ == "__main__":
     main()
