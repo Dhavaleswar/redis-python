@@ -10,11 +10,10 @@ def main():
     with socket.create_server(("localhost", 6379), reuse_port=True) as server_socket:
         while True:
             connection_, _ = server_socket.accept()  # wait for client
+            print("New Connection Created")
             data = connection_.recv(1024)
-            if not data:
-                connection_.close()
-            else:
-                connection_.sendall(b"+PONG\r\n")
+            connection_.sendall(b"+PONG\r\n")
+
 
 if __name__ == "__main__":
     main()
