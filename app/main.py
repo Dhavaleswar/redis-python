@@ -1,5 +1,6 @@
 import socket  # noqa: F401
 import threading
+from .server import run_server
 
 
 def parse_redis_type_protocol(decoded_data:str):
@@ -40,5 +41,8 @@ def main():
             threading.Thread(target=handle_client, args=(connection_,)).start()
 
 
+def new_main():
+    run_server("localhost", 6379)
+
 if __name__ == "__main__":
-    main()
+    new_main()

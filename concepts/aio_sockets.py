@@ -6,7 +6,7 @@ PORT = 8888
 
 async def handle_echo(reader: asyncio.StreamReader, writer: asyncio.StreamWriter):
     data = None
-    while
+
 
 async def run_server() -> None:
     server = await asyncio.start_server(handle_echo, HOST, PORT)
