@@ -1,5 +1,4 @@
 import socket
-import selectors
 import time
 
 from .sels import SEL
